@@ -1,0 +1,135 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body,
+.time,
+.left-side,
+.right-side,
+.right-top,
+.right-down ,h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.digital-clock,
+.time,
+.right-side {
+    position: relative;
+}
+h2{
+    background-image: -webkit-linear-gradient(180deg , red, orange, blue);
+    padding: 50px 50px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(-60deg ,#2e2e45, black);
+}
+
+.digital-clock {
+    color: #fff;
+    background: #2d2f38;
+    width: 425px;
+    padding: 20px 45px;
+    border-radius: 10px;
+    box-shadow: 2px 1px 2px 2px  silver,
+    2px 1px 2px 2px silver;
+}
+
+.digital-clock::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(45deg, orange, blue, red);
+    background-size: 200% 200%;
+    top: -5px;
+    left: -5px;
+    bottom: -5px;
+    right: -5px;
+    z-index: -1;
+    border-radius: 10px;
+    filter: blur(30px);
+    animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0% 50%;
+
+    }
+
+    50% {
+        background-position: 50% 0%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+
+    }
+}
+
+#hours {
+    font-weight: 600;
+    padding: 0 10px;
+    line-height: 125px;
+    font-size: 8rem;
+    background: -webkit-linear-gradient(90deg, blue, orange);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.right-side {
+    flex-direction: column;
+}
+
+#dots {
+    font-size: 5em;
+    transform: translateY(-3px);
+    color: white;
+
+}
+
+#minutes {
+    font-size: 5em;
+    font-weight: 600;
+    margin-left: 10px;
+    background: -webkit-linear-gradient(-60deg, red, blue);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.right-down {
+    margin-top: 10px;
+    transform: translateY(-25px);
+}
+
+#period,
+#seconds {
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-left: 10px;
+    line-height: 50px;
+}
+
+#period {
+    color: orange;
+    text-indent: 25px;
+}
+
+#seconds {
+    
+    background: -webkit-linear-gradient(-60deg, red, blue);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    
+}
